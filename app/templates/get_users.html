@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get All</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+<body>
+    <main>
+        <div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>ID</td>
+                        <td>Name</td>
+                        <td>Age</td>
+                        <td>Email</td>
+                    </tr>
+                    {% for user in users %}
+                    <tr>
+                        <td>{{user["id"]}}</td>
+                        <td>{{user["name"]}}</td>
+                        <td>{{user["age"]}}</td>
+                        <td>{{user["email"]}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+</body>
+</html>
