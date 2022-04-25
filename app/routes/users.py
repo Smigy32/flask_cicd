@@ -46,3 +46,11 @@ def create_user():
         return render_template("response.html", response=f"User with email {email} has been created!"), 201
 
     return render_template("create_user.html")
+
+
+@user_bp.route("/users/<int:user_id>", methods=['DELETE'])
+def delete_user(user_id):
+    response_code = UserModel.delete_by_id(user_id)
+    if response_code == 404:
+        return jsonify({"message": "User not found."}), 404
+    return jsonify({"message": "The user was deleted."})
